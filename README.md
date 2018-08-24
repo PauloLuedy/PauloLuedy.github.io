@@ -1,1 +1,0 @@
-# PauloLuedy.github.io
