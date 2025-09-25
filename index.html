@@ -1,73 +1,366 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../../../favicon.ico">
-  <title>Currículo</title>
-  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo Luedy - Software Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .summary {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .experience {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+
+        .job {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            flex: 1;
+        }
+
+        .job-title h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #7f8c8d;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .location {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+
+        .duration {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .job-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .job-description ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+        }
+
+        .skills {
+            margin-top: 15px;
+        }
+
+        .skills-tag {
+            display: inline-block;
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 4px 12px;
+            margin: 3px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            border: 1px solid #bdc3c7;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+            
+            .duration {
+                margin-top: 10px;
+                align-self: flex-start;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <header class="header">
+            <h1>Paulo Luedy</h1>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFMPk7iGQHq3g/profile-displayphoto-crop_800_800/B4DZl5v2Y4GkAI-/0/1758684211316?e=1761782400&v=beta&t=73is0DbXYpb6WIgb74mCSXHEEkDCR83XJnD9zCi3TyI" alt="Profile Photo" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin-bottom: 18px;">
 
-  <header>
+            <div class="title">Software Engineer</div>
+            <p>7+ Years of Experience | Backend Specialist | Cloud Computing | AWS Certified</p>
+        </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Software engineer</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="port.html">Projetos</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>With over seven years of experience in software engineering, I have developed strong expertise in backend technologies, along with additional experience in cloud computing, front-end development, testing, and security. I work using agile methodologies, always prioritizing cost efficiency, scalability, and reliability.</p>
+            <br>
+            <p>I apply modern software engineering principles to deliver efficient and maintainable code while maintaining existing systems, developing new features, and integrating services. I possess advanced skills in unit testing with Jest and utilize Infrastructure as Code (IaC) practices using Terraform to automate and optimize infrastructure management.</p>
+            <br>
+            <p>Currently pursuing certifications in Cybersecurity and AWS to further expand my technical expertise and enhance my ability to design secure, scalable, and cloud-native solutions.</p>
+        </section>
 
-  </header>
+        <section class="experience">
+            <h2>Professional Experience</h2>
 
-  <main role="main">
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">
+                        <h3>Software Engineer</h3>
+                        <div class="company">TOTVS</div>
+                        <div class="location">São Paulo, Brazil • Remote</div>
+                    </div>
+                    <div class="duration">Apr 2024 - Present</div>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Contributed to strategic architectural decisions alongside architects from TOTVS and AWS, focusing on improving security and optimizing costs for Lambda functions and EC2 instances</li>
+                        <li>Designed and maintained backend systems and databases using AWS services, resulting in enhanced performance and reliability</li>
+                        <li>Developed a currency quotation API that automates the retrieval of exchange rates from multiple countries through HTTP requests and web scraping</li>
+                        <li>Built scalable APIs for billing, marketplace operations, user management, payment slips, and email delivery using serverless services</li>
+                        <li>Implemented and optimized CI/CD pipelines in Azure, reducing deployment times and ensuring consistency in delivery</li>
+                        <li>Automated infrastructure management through Infrastructure as Code, enhancing scalability and reducing operational overhead</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skills-tag">AWS</span>
+                        <span class="skills-tag">Nest.js</span>
+                        <span class="skills-tag">TypeScript</span>
+                        <span class="skills-tag">PostgreSQL</span>
+                        <span class="skills-tag">Terraform</span>
+                        <span class="skills-tag">Azure DevOps</span>
+                        <span class="skills-tag">Lambda</span>
+                        <span class="skills-tag">EC2</span>
+                        <span class="skills-tag">RDS</span>
+                        <span class="skills-tag">API Gateway</span>
+                    </div>
+                </div>
+            </div>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">
+                        <h3>Software Engineer</h3>
+                        <div class="company">Meta</div>
+                        <div class="location">Remote</div>
+                    </div>
+                    <div class="duration">Dec 2022 - Apr 2024</div>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Designed and implemented high-performance serverless architecture utilizing AWS Lambda, SQS, and DynamoDB to manage large volumes of on-demand data</li>
+                        <li>Integrated low-code platforms with AWS services, creating seamless monitoring interfaces with real-time visibility into application logs and transactions</li>
+                        <li>Strengthened security by implementing robust authentication mechanisms for internal and external users through AWS Cognito</li>
+                        <li>Ensured compliance and protected sensitive data by integrating authentication with internal systems</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skills-tag">AWS Lambda</span>
+                        <span class="skills-tag">SQS</span>
+                        <span class="skills-tag">DynamoDB</span>
+                        <span class="skills-tag">AWS Cognito</span>
+                        <span class="skills-tag">Next.js</span>
+                        <span class="skills-tag">Serverless Computing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">
+                        <h3>Fullstack Software Engineer</h3>
+                        <div class="company">NTT DATA | Itaú</div>
+                        <div class="location">São Paulo, Brazil • Remote</div>
+                    </div>
+                    <div class="duration">Jul 2020 - Dec 2021</div>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Specialized in API development and scalable solution design, ensuring software quality and system reliability</li>
+                        <li>Enhanced chatbot features to improve user experience, resulting in more natural and efficient interactions</li>
+                        <li>Applied design patterns, such as the Strategy pattern, to simplify email and SMS messaging integration</li>
+                        <li>Optimized database queries, significantly improving performance and reducing response times for critical operations</li>
+                        <li>Recognized for being proactive, autonomous, and solution-driven with creative problem-solving approaches</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skills-tag">Express.js</span>
+                        <span class="skills-tag">Node.js</span>
+                        <span class="skills-tag">Database Optimization</span>
+                        <span class="skills-tag">Design Patterns</span>
+                        <span class="skills-tag">API Development</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">
+                        <h3>Fullstack Software Engineer</h3>
+                        <div class="company">Expense Mobi</div>
+                        <div class="location">Vila Olímpia, São Paulo, Brazil</div>
+                    </div>
+                    <div class="duration">Feb 2020 - Aug 2020</div>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Developed APIs and web applications with focus on feature development, code enhancement, and system maintenance</li>
+                        <li>Designed and implemented an API processing Excel file uploads, handling approximately 15,000 records per upload</li>
+                        <li>Utilized Strategy design pattern to dynamically separate and map columns into appropriate database tables</li>
+                        <li>Implemented rigorous data validation and security checks, improving performance and reliability</li>
+                        <li>Led team migration from AngularJS to Angular 4 and React.js, enhancing maintainability and scalability</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skills-tag">React.js</span>
+                        <span class="skills-tag">Angular</span>
+                        <span class="skills-tag">GraphQL</span>
+                        <span class="skills-tag">Excel Processing</span>
+                        <span class="skills-tag">Data Validation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">
+                        <h3>Fullstack Software Engineer</h3>
+                        <div class="company">MJV Technology & Innovation | Bradesco Seguros</div>
+                        <div class="location">Barueri, São Paulo, Brazil</div>
+                    </div>
+                    <div class="duration">Oct 2018 - Feb 2020</div>
+                </div>
+                <div class="job-description">
+                    <ul>
+                        <li>Developed life and pension workflow applications for Bradesco Seguros using HTML, CSS, and Angular</li>
+                        <li>Created interactive, decision-tree style screens that helped customize user profiles based on dynamic choices</li>
+                        <li>Served as primary liaison with bank managers to gather and translate complex calculation rules</li>
+                        <li>Implemented dynamic backend spreadsheet system ensuring accurate processing and seamless integration</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skills-tag">Angular</span>
+                        <span class="skills-tag">HTML/CSS</span>
+                        <span class="skills-tag">Business Analysis</span>
+                        <span class="skills-tag">Financial Systems</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Get In Touch</h2>
+            <p>
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            </p>
+        </section>
     </div>
-
-    <div class="container marketing">
-
-      <div class="row">
-        <div class="col-lg-4" style="margin: 0 auto">
-          <img class="rounded-circle" src="./img/foto.jpeg" alt="Generic placeholder image" width="160" height="160">
-          <h2>Paulo Luedy</h2><br>
-          <p>Full Stack Developer</p><br>
-          <p>São Vicente, São Paulo, Brazil</p>
-          <p><a class="btn btn-secondary" href="./img/My CV.pdf" download role="button">Download Resume &raquo;</a></p>
-        </div>
-      </div>
-      <hr class="featurette-divider">
-    </div>
-  </main>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
-  <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
-  <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
 </body>
-
 </html>
